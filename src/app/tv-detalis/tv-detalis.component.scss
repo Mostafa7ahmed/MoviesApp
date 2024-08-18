@@ -1,0 +1,83 @@
+.img-details {
+  height: 500px;
+  object-fit: contain;
+}
+.bgBanner{
+  background-position: center center;
+  background-size: cover;
+  object-fit:scale-down;
+  border-radius: 25px;
+  overflow: hidden;
+
+
+}
+.bgInfo{
+  width: 100%;
+  background-color: #140202b6 !important;
+  margin: 0 !important;
+
+}
+.tagline {
+  color: #a8a8a8d5;
+}
+.ParentType {
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: bold !important;
+  gap: 20px;
+}
+.ParentType .type h3 {
+  background-color: #a8a8a866;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+  transition: 1s all ease;
+  border: 1px solid transparent;
+}
+.ParentType .type h3:hover {
+  background-color: #a8a8a800;
+  border: 1px solid #a8a8a866;
+}
+h4 span {
+  color: rgb(13 202 240);
+}
+
+.Link {
+  background-color: rgb(13 202 240);
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 900;
+}
+.Link i {
+  margin-right: 20px;
+  font-size: 18px;
+}
+
+.BannerImage {
+  border-radius: 25px;
+  height: 400px;
+}
+.items {
+  background-color: #4e515727 !important;
+  border-radius: 25px;
+  padding: 20px;
+  width:fit-content;
+}
+.brdr{
+    background-color: #a8a8a83d ;
+    height: 3px;
+    border-radius: 20px;
+
+}
+.textP{
+    color:#a8a8a83d;
+}
+
+
+@media (max-width: 767.98px) {
+  .BannerImage {
+    width: 100%;
+  }
+}

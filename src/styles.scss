@@ -1,0 +1,142 @@
+/* Global styles and imports */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap');
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+body {
+  background-color: #131722;
+  color: #fff;
+  font-family: "Montserrat Alternates", sans-serif;
+  scroll-behavior: smooth;
+}
+
+a, a:hover {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.bg-light {
+  background-color: #24baef !important;
+}
+
+.centerDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center !important;
+}
+
+.brdr {
+  background-color: #a8a8a83d;
+  height: 3px;
+  border-radius: 20px;
+}
+
+.textP {
+  color: #a8a8a83d;
+}
+
+.movie {
+  height: 600px;
+  background-color: #007bff;
+}
+
+.movies {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.layer {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000c;
+  transition: all 1.5s;
+  z-index: 1;
+}
+
+.movies:hover .layer {
+  opacity: 1;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 20px;
+}
+
+.pagination-controls button {
+  padding: 10px 30px;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  background-color: #007bff;
+}
+
+.pagination-controls button[disabled] {
+  background-color: #a8a8a83d;
+  cursor: not-allowed;
+}
+
+.bgBanner {
+  background-position: center;
+  background-size: cover;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.bgInfo {
+  width: 100%;
+  background-color: #140202b6 !important;
+  margin: 0 !important;
+}
+
+.tagline {
+  color: #a8a8a8d5;
+}
+
+.Detalis {
+  border-radius: 20px;
+  border: 1px solid #a8a8a866;
+}
+
+.Parent {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  height: 35px;
+  aspect-ratio: 5;
+  display: grid;
+  --_g: no-repeat radial-gradient(farthest-side, #fff 94%, #00000000);
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  grid-area: 1/1;
+  background: var(--_g) left, var(--_g) right;
+  background-size: 20% 100%;
+  animation: l32 1s infinite;
+}
+
+.loader:after {
+  background: var(--_g) calc(1 * 100% / 3), var(--_g) calc(2 * 100% / 3);
+  background-size: 20% 100%;
+  animation-direction: reverse;
+}
+
+@keyframes l32 {
+  80%, 100% {
+    transform: rotate(.5turn);
+  }
+}

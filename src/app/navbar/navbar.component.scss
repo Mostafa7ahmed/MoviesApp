@@ -1,0 +1,13 @@
+.Menu{display: none;}
+.resPonUl{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 55555555555555555 !important;
+}
+@media (max-width: 767.98px) { 
+    
+    .Route{display: none !important; } 
+    .Menu{display: block;}
+ }

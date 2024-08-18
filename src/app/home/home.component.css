@@ -1,0 +1,13 @@
+.brdr {
+  background-color: rgba(168, 168, 168, 0.2392156863);
+  height: 3px;
+  border-radius: 20px;
+}
+
+.textP {
+  color: rgba(168, 168, 168, 0.2392156863);
+}
+
+.movie {
+  height: 600px;
+}/*# sourceMappingURL=home.component.css.map */

@@ -1,0 +1,44 @@
+<div *ngIf="isLoading; else moviesContent" class="Parent" >
+  <div class="loader"></div>
+</div>
+
+<ng-template #moviesContent>
+  <div class="row">
+    <a routerLink="/home">
+      <i class="fa-solid fa-arrow-left fa-bounce fa-2x"></i>
+    </a>
+  </div>
+  <div class="row container">
+    <div class="col-md-5 my-3">
+      <div>
+        <img
+          height="500px"
+          class="Detalis"
+          [src]="imgDetalise + peopledetails.profile_path"
+          alt="Person"
+        />
+      </div>
+    </div>
+  
+    <div class="col-md-7">
+      <h3 class="text-white my-3">{{ peopledetails.name }}</h3>
+      <h5 class="tagline my-4" *ngIf="peopledetails.biography ; else text">
+        {{ peopledetails.biography}}
+      </h5>
+     <ng-template #text>
+      <h5 class="tagline my-4" >
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium molestiae adipisci, aliquam qui deserunt nihil voluptate ipsa minima earum ex quisquam non eius veritatis repudiandae nobis est. Consequatur, expedita qui?
+      </h5>
+     </ng-template>
+      <h4 class="my-4">
+        <span>Popularity : </span>
+        <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+        {{ peopledetails.popularity }}
+      </h4>
+      <h4 class="mb-4"><span>Birthday : </span> {{ peopledetails.birthday }}</h4>
+      <h4 class="mb-4">
+        <span>Department : </span> {{ peopledetails.known_for_department }}
+      </h4>
+    </div>
+  </div>
+  </ng-template>

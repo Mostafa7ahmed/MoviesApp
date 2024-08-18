@@ -1,0 +1,77 @@
+<div *ngIf="isloading; else moviesContent" class="Parent" >
+  <div class="loader"></div>
+</div>
+
+
+<ng-template #moviesContent>
+  <div class="row   ">
+    <a routerLink="/home">
+      <i class="fa-solid fa-arrow-left fa-bounce fa-2x"></i>
+    </a>
+  </div>
+
+  <div  [ngStyle]="{'background-image': 'url(' + backgroundImageUrl + ')'}" class="background-cover  bgBanner">
+
+    <div class="row container  bgInfo">
+    
+      <div class="col-md-5 my-3">
+        <div>
+          
+          <img height="500px" class="Detalis" [src]="imgDetalise + Tvdetails.poster_path" alt="Poster">
+        </div>
+      </div>
+    
+      <div class="col-md-7  my-3 ">
+        <h3 class="text-white my-3">{{ Tvdetails.original_name }}</h3>
+        <h5 class="tagline my-4">{{ Tvdetails.tagline }}</h5>
+    
+        <div class="ParentType" *ngIf="Tvdetails.genres && Tvdetails.genres.length">
+          <div class="type" *ngFor="let item of Tvdetails.genres">
+            <h3 class="d-flex text-center h6">{{ item.name }}</h3>
+          </div>
+        </div>
+    
+        <p class="text-white my-4 h6">{{ Tvdetails.overview }}</p>
+    
+        <h4 class="my-4">
+          <span>Rate: </span>
+          <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          {{ Tvdetails.vote_average }}
+        </h4>
+        <h4 class="mb-4">
+          <span>Vote count: </span>
+          {{ Tvdetails.vote_count }}
+        </h4>
+    
+        <a [href]="Tvdetails.homepage" class="Link">
+          <i class="fa-solid fa-play mb-5"></i>
+          To Show Film
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="brdr my-3"></div>
+<h2 class="text-center">Seasons</h2>
+<div class="brdr my-3"></div>
+  <p-carousel [value]="products" [numVisible]="3" [numScroll]="3" [circular]="true" [responsiveOptions]="responsiveOptions">
+    <ng-template let-product pTemplate="item"  >
+      <div class="border-1 surface-border border-round text-center items m-3 py-3 ">
+        <div class="mb-3"  >
+          <img *ngIf="product.poster_path; else fallbackImage" [src]="imgDetalise + product.poster_path" class="shadow-2 BannerImage" />
+          <ng-template #fallbackImage>
+            <img src="../../assets/notFoundpng.png" alt="Image not found" class="shadow-2 BannerImage w-100" />
+          </ng-template>        
+        
+        </div>
+
+        
+        <div>
+          <h6 class="mt-0 mb-3">Season :{{ product.name }}</h6>
+          <h6 class="mt-0 mb-3">Air Date :{{ product.air_date }}</h6>
+
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+  </ng-template>

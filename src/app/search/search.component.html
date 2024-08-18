@@ -1,0 +1,54 @@
+<h2 class="py-3">Search</h2>
+<form [formGroup]="searchForm" (ngSubmit)="searchMovies()">
+  <div class="inputSearch">
+    <input 
+      type="text" 
+      formControlName="searchQuery" 
+      class="form-control p-3 inPut" 
+      placeholder="Search for a movie"
+      [class.is-invalid]="searchForm.get('searchQuery')?.touched && searchForm.get('searchQuery')?.invalid"
+    />
+    <button type="submit" class=" subMit  py-3">Search</button>
+
+  </div>
+  
+</form>
+
+<div *ngIf="isLoading; else searchResultsTemplate" class="Parent">
+  <div class="loader"></div>
+</div>
+
+<ng-template #searchResultsTemplate>
+  <div *ngIf="searchAttempted">
+    <div *ngIf="searchResults.length > 0; else noResultsTemplate" class="row">
+      <div *ngFor="let item of searchResults" class="col-md-3 g-4">
+        <a class="text-white" [routerLink]="['/moviesDetalis', item.id]">
+          <div class="movies position-relative">
+            <div class="layer position-absolute text-white d-flex align-items-center justify-content-center">
+              <h5 class="fw-bolder">Click to see more</h5>
+            </div>
+
+            <img *ngIf="item.poster_path; else fallbackImage" [src]="imgeUrl + item.poster_path" class="w-100" />
+            <ng-template #fallbackImage>
+              <img src="../../assets/notFoundpng.png" alt="Image not found" class="w-100" />
+            </ng-template>
+
+            <div class="position-absolute top-0 end-0 bg-info p-2">
+              <span>{{ item.vote_average }}</span>
+            </div>
+          </div>
+          <div class="text-center p-3">
+            <h6 class="mt-3 p-2 text-ellipsis">{{ item.title }}</h6>
+          </div>
+        </a>
+      </div>
+    </div>
+    <ng-template #noResultsTemplate>
+      <div class="notFound" role="alert">
+
+            <p>        No results found.
+            </p>
+      </div>
+    </ng-template>
+  </div>
+</ng-template>

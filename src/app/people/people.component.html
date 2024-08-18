@@ -1,0 +1,37 @@
+<div *ngIf="loader; else personContent" class="Parent" >
+    <div class="loader"></div>
+  </div>
+  <ng-template #personContent>
+    <div class="brdr my-3"></div>
+    <h2 class="text-center">Person</h2>
+    <div class="brdr my-3"></div>
+    
+    <div class="row">
+     
+      <div *ngFor="let item of people" class="col-md-3 g-4">
+        <a class="text-white" [routerLink]="['/personDetalis', item.id]">
+          <div class="movies position-relative">
+            <div class="layer position-absolute text-white d-flex align-items-center justify-content-center">
+              <h5 class="fw-bolder">Click to see more</h5>
+            </div>
+    
+            <img [src]="imgeUrl + item.profile_path" alt="" class="w-100" />
+    
+            <div class="position-absolute top-0 end-0 bg-info p-2">
+              <span>{{ item.popularity }}</span>
+            </div>
+          </div>
+          <div class="text-center p-3">
+            <h6 class="mt-3 p-2 text-ellipsis">{{ item.name }}</h6>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="pagination-controls">
+        <button (click)="goToPage(currentPage - 1)" [disabled]="currentPage <= 1">Previous</button>
+        <span>Page : {{ currentPage }}</span>
+        <button (click)="goToPage(currentPage + 1)" [disabled]="currentPage >= totalPages">Next</button>
+      </div>
+
+</ng-template>

@@ -1,0 +1,43 @@
+.is-invalid {
+    border-color: #dc3545;
+  }
+  
+  .invalid-feedback {
+    color: #dc3545;
+    font-size: 0.875em;
+    margin-top: 0.25rem;
+  }
+  .notFound{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .notFound p{
+    font-size: 35px;
+  }
+
+  .inputSearch{
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+    border: 1px solid #fff;
+  }
+  .inPut{
+    border: none;
+  }
+  .subMit{
+    border-radius: 25px;
+    font-weight: 600;
+
+     position: absolute;
+     right: 0;
+     z-index: 20;
+     top: 0;
+     border: none;
+     padding: 20px 30px;
+     background-color: #131722;
+     color: aliceblue;
+     
+  }

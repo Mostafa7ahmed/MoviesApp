@@ -1,0 +1,92 @@
+.img-details {
+    height: 500px;
+    object-fit: contain;
+}
+
+.tagline {
+    color: #a8a8a88d;
+}
+
+.ParentType {
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: bold !important;
+    gap: 20px;
+}
+
+.ParentType .type h3 {
+    background-color: #a8a8a866;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #FFF;
+    transition: 1s all ease;
+    border: 1px solid transparent;
+
+}
+
+.ParentType .type h3:hover {
+    background-color: #a8a8a800;
+    border: 1px solid #a8a8a866;
+}
+
+h4 span {
+    color: rgb(13 202 240);
+}
+
+.Link {
+    background-color: rgb(13 202 240);
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 900;
+
+}
+
+.Link i {
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+
+
+.Parent {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader {
+    height: 35px;
+    aspect-ratio: 5;
+    display: grid;
+    --_g: no-repeat radial-gradient(farthest-side, #fff 94%, #00000000);
+}
+
+.loader:before,
+.loader:after {
+    content: "";
+    grid-area: 1/1;
+    background:
+        var(--_g) left,
+        var(--_g) right;
+    background-size: 20% 100%;
+    animation: l32 1s infinite;
+}
+
+.loader:after {
+    background:
+        var(--_g) calc(1*100%/3),
+        var(--_g) calc(2*100%/3);
+    background-size: 20% 100%;
+    animation-direction: reverse;
+}
+
+@keyframes l32 {
+
+    80%,
+    100% {
+        transform: rotate(.5turn)
+    }
+}

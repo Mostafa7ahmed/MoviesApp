@@ -1,0 +1,52 @@
+<div *ngIf="isloading; else moviesdetailss" class="Parent" >
+    <div class="loader"></div>
+  </div>
+
+  <ng-template #moviesdetailss>
+    <div class="row">
+        <a routerLink="/home"> <i class="fa-solid fa-arrow-left fa-bounce fa-2x"></i> </a>
+    </div>
+
+    <div  [ngStyle]="{'background-image': 'url(' + backgroundImageUrl + ')'}" class="background-cover  bgBanner">
+
+        <div class="row container bgInfo">
+    
+            <div class="col-md-5 my-3">
+                <div>
+                    <img height="500px" class="Detalis" [src]="imgDetalise+moviesdetails.poster_path" alt="Twisters">
+                </div>
+            </div>
+        
+            <div class="col-md-7">
+                <h3 class="text-white  my-3">{{moviesdetails.original_title}}</h3>
+                <h5 class="tagline my-4">{{moviesdetails.tagline}}</h5>
+        
+                <div class="ParentType">
+                    <div class="type" *ngFor="let item of moviesdetails.genres">
+        
+                        <h3 class="d-flex text-center h6">{{item.name}}</h3>
+                    </div>
+                </div>
+                <p class="text-white my-4 h6">{{moviesdetails.overview}}</p>
+        
+                <h4 class="my-4"> <span>Rate : </span> <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    {{moviesdetails.vote_average}}</h4>
+                <h4 class="mb-4"> <span>Vote count : </span> {{moviesdetails.vote_count}}</h4>
+                <h4 class="mb-4"> <span>Release Date : </span> {{moviesdetails.release_date}}</h4>
+        
+        
+                <a [href]="moviesdetails.homepage" class="Link"> <i class="fa-solid fa-play"></i> To Show Film </a>
+            </div>
+        
+        
+        
+        
+        
+        
+        </div>
+
+
+    </div>
+  
+
+</ng-template>

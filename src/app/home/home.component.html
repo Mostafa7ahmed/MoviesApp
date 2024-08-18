@@ -1,0 +1,122 @@
+<div *ngIf="isLoadingMovies; else moviesContent" class="Parent" >
+  <div class="loader"></div>
+</div>
+
+<ng-template #moviesContent>
+  <app-header [HeaderArray] ="trendingMovies" ></app-header>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="centerDiv">
+        <div class="brdr w-25 my-3"></div>
+        <h2 class="my-3">
+          Trending Mocies <br />
+          to watch Right now
+        </h2>
+        <p class="textP">Trending Mocies to watch Right now</p>
+        <div class="brdr my-3"></div>
+      </div>
+    </div>
+    <div *ngFor="let item of trendingMovies" class="col-md-3 g-4">
+      <a class="text-white" [routerLink]="['/moviesDetalis', item.id]">
+        <div class="movies position-relative">
+          <div class="layer position-absolute text-white d-flex align-items-center justify-content-center">
+            <h5 class="fw-bolder">Click to see more</h5>
+          </div>
+
+          <img [src]="imgeUrl + item.poster_path" alt="" class="w-100" />
+
+          <div class="position-absolute top-0 end-0 bg-info p-2">
+            <span>{{ item.vote_average }}</span>
+          </div>
+        </div>
+        <div class="text-center p-3">
+          <h6 class="mt-3 p-2 text-ellipsis">{{ item.title }}</h6>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</ng-template>
+
+<div *ngIf="isLoadingTv; else tvContent" class="Parent" >
+  <div class="loader"></div>
+</div>
+<ng-template #tvContent>
+  <div class="brdr my-3"></div>
+  <h2 class="text-center">TV</h2>
+  <div class="brdr my-3"></div>
+  
+  <div class="row">
+    <div class="col-md-6">
+      <div class="centerDiv">
+        <div class="brdr w-25 my-3"></div>
+        <h2 class="my-3">
+          Trending TV <br />
+          to watch Right now
+        </h2>
+        <p class="textP">Trending Mocies to watch Right now</p>
+        <div class="brdr my-3"></div>
+      </div>
+    </div>
+    <div *ngFor="let item of trendingTv" class="col-md-3 g-4">
+      <a class="text-white" [routerLink]="['/tvDetalis', item.id]">
+        <div class="movies position-relative">
+          <div class="layer position-absolute text-white d-flex align-items-center justify-content-center">
+            <h5 class="fw-bolder">Click to see more</h5>
+          </div>
+  
+          <img [src]="imgeUrl + item.poster_path" alt="" class="w-100" />
+  
+          <div class="position-absolute top-0 end-0 bg-info p-2">
+            <span>{{ item.vote_average }}</span>
+          </div>
+        </div>
+        <div class="text-center p-3">
+          <h6 class="mt-3 p-2 text-ellipsis">{{ item.name }}</h6>
+        </div>
+      </a>
+    </div>
+  </div>
+</ng-template>
+
+
+<div *ngIf="isLoadingPerson; else personContent" class="Parent" >
+  <div class="loader"></div>
+</div>
+<ng-template #personContent>
+  <div class="brdr my-3"></div>
+  <h2 class="text-center">Person</h2>
+  <div class="brdr my-3"></div>
+  
+  <div class="row">
+    <div class="col-md-6">
+      <div class="centerDiv">
+        <div class="brdr w-25 my-3"></div>
+        <h2 class="my-3">
+          Trending Person <br />
+          to watch Right now
+        </h2>
+        <p class="textP">Trending Mocies to watch Right now</p>
+        <div class="brdr my-3"></div>
+      </div>
+    </div>
+    <div *ngFor="let item of trendingPerson" class="col-md-3 g-4">
+      <a class="text-white" [routerLink]="['/personDetalis', item.id]">
+        <div class="movies position-relative">
+          <div class="layer position-absolute text-white d-flex align-items-center justify-content-center">
+            <h5 class="fw-bolder">Click to see more</h5>
+          </div>
+  
+          <img [src]="imgeUrl + item.profile_path" alt="" class="w-100" />
+  
+          <div class="position-absolute top-0 end-0 bg-info p-2">
+            <span>{{ item.popularity }}</span>
+          </div>
+        </div>
+        <div class="text-center p-3">
+          <h6 class="mt-3 p-2 text-ellipsis">{{ item.name }}</h6>
+        </div>
+      </a>
+    </div>
+  </div></ng-template>

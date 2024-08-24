@@ -60,7 +60,7 @@
         <div class="mb-3"  >
           <img *ngIf="product.poster_path; else fallbackImage" [src]="imgDetalise + product.poster_path" class="shadow-2 BannerImage" />
           <ng-template #fallbackImage>
-            <img src="../../assets/notFoundpng.png" alt="Image not found" class="shadow-2 BannerImage w-100" />
+            <img src="./assets/notFoundpng.png" alt="Image not found" class="shadow-2 BannerImage w-100" />
           </ng-template>        
         
         </div>
